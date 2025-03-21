@@ -9,13 +9,16 @@ if ($conexDB->connect_error) {
     echo $conexDB->connect_error;
     die();
 }
-echo "Conexión exitosa<br>";
+echo "Conexión exitosa <br>";
+
+echo "<br>";
 
 echo "<table border='2'>";
 echo "<tr>
         <th>Nombre </th>
         <th>Email</th>
         <th>Edad</th>
+        <th>Mayor de Edad</th>
         </tr>";
 
 $sql = "select * from personas";
@@ -27,11 +30,14 @@ if ($resultadosSQL->num_rows > 0) {
         $email = $row['email'];
         $edad = $row['edad'];
 
+        $esMayorEdad = $edad >= 18 && $edad <= 150 ? 'Si' : 'No';
+
         echo "<tr>
-        <td>$nombre</td>
-        <td>$email</td>
-        <td>$edad</td>
-        </tr>";
+                <td>$nombre</td>
+                <td>$email</td>
+                <td>$edad</td>
+                <td>$esMayorEdad</td>
+            </tr>";
     }
 } else {
     echo "<br>No hay registros<br>";
