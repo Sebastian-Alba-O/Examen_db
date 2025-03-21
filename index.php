@@ -3,7 +3,7 @@ $hostDB = "localhost";
 $userDB = "root";
 $pwdDB = "";
 $nameDB = "examen_pr2";
-//$portDB = "4203";
+
 $conexDB = new mysqli($hostDB, $userDB, $pwdDB, $nameDB);
 if ($conexDB->connect_error) {
     echo $conexDB->connect_error;
@@ -37,7 +37,15 @@ if ($resultadosSQL->num_rows > 0) {
                 <td>$email</td>
                 <td>$edad</td>
                 <td>$esMayorEdad</td>
+                
+
+                <td>
+                    <a href='editar.php?id=$id'>Editar</a> | 
+                    <a href='eliminar.php?id=$id'>Eliminar</a>
+                </td>
             </tr>";
+
+            
     }
 } else {
     echo "<br>No hay registros<br>";
