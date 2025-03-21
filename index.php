@@ -40,8 +40,9 @@ if ($resultadosSQL->num_rows > 0) {
                 
 
                 <td>
-                    <a href='editar.php?id=$id'>Editar</a> | 
+                    <a href='editar.php?id=$id'>Editar</a> 
                     <a href='eliminar.php?id=$id'>Eliminar</a>
+                    <a href='modificar.php?id=$id'>Modificar</a>
                 </td>
             </tr>";
 
